@@ -1,36 +1,34 @@
-# 🚀 TUNFEX - Gerenciador de Perfis VPN
+# 🌐 Tunfex VPN - Perfis Remotos
 
-![GitHub repo size](https://img.shields.io/github/repo-size/sothefex/tunfex)
-![GitHub last commit](https://img.shields.io/github/last-commit/sothefex/tunfex)
-![GitHub](https://img.shields.io/github/license/sothefex/tunfex)
-![GitHub stars](https://img.shields.io/github/stars/sothefex/tunfex?style=social)
+Um jeito simples de gerenciar seus perfis de VPN e compartilhar com a galera.
 
 ---
 
-## 📌 **Sobre o Projeto**
+## 🤔 Como funciona?
 
-O **TUNFEX** é um gerenciador de perfis VPN desenvolvido para facilitar a criação, edição e distribuição de configurações SSH/SSL/Proxy de forma segura e organizada.
-
-Os perfis são armazenados em um arquivo `profiles.json` e criptografados com **AES-256-CBC** usando a biblioteca **Fernet** do Python, garantindo que suas credenciais estejam protegidas.
+1. Você cria seus perfis VPN (SSH, Proxy, SSL, etc)
+2. Criptografa com sua chave secreta
+3. O app do seu celular baixa automaticamente
+4. Pronto! Seus perfis sempre atualizados!
 
 ---
 
-## 🔐 **Segurança**
+## 🔒 É seguro?
 
-- 🔑 **Chave AES-256** gerada aleatoriamente pelo usuário
-- 🔒 Arquivo `profiles.enc` **nunca** armazena dados em texto puro
-- 🚫 **Token GitHub** salvo localmente com permissões restritas
-- ⚠️ **A chave de criptografia NUNCA deve ser compartilhada**
+Sim! O arquivo `profiles.enc` é público mas tá criptografado. Só quem tem a chave consegue ler.
 
-### Como gerar sua chave:
+- Ninguém vê suas senhas
+- Ninguém vê seus IPs
+- Ninguém vê nada!
+
+---
+
+## 🚀 Como usar
+
+### No PC/Servidor:
 
 ```bash
-# Usando Python (recomendado)
-python3 << 'EOF'
-from cryptography.fernet import Fernet
-chave = Fernet.generate_key()
-print(chave.decode())
-EOF
-
-# Ou usando OpenSSL
-openssl rand -base64 32
+# Baixa o script
+wget https://raw.githubusercontent.com/sothefex/tunfex/main/vpn_manager.sh
+chmod +x vpn_manager.sh
+bash vpn_manager.sh
